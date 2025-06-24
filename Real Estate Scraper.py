@@ -65,7 +65,7 @@ class RealEstateSpider(scrapy.Spider):
 
         # Example: Assuming each real estate listing is contained within a <div> with class 'listing'.
         # Adjust 'div.listing' to the correct selector for a single listing container.
-        listings = response.css('div.listing')
+        listings = response.css(body > div.PageContent.mt-0 > div > div > div > div.ldc_left > div.mr-4.pr-md-5 > div > div.col-md.col-12 > h1)
 
         # Log a warning if no listings are found, which might indicate incorrect selectors.
         if not listings:
